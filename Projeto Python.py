@@ -47,4 +47,4 @@ def Criar_Publicação(fnome):
     f = open(fnome, 'w', encoding="utf-8")
     json.dump(bd, f, ensure_ascii=False, indent=4)
 
-jkkjk
+
