@@ -1,0 +1,65 @@
+[
+    {
+        "abstract": "Resumo Introdução: A perturbação esquizofreniforme manifesta-se com sintomas semelhantes aos da esquizofrenia, mas distingue-se desta pela sua duração mais curta, que varia entre um e seis meses. O objetivo deste estudo foi descrever e analisar as hospitalizações por perturbação esquizofreniforme numa base de dados nacional de internamentos.Métodos: Planeámos um estudo retrospetivo, utilizando uma base de dados de hospitalizações a nível nacional, contendo todos os internamentos registados em hospitais públicos de Portugal Continental entre 2008 e 2015. As hospitalizações com diagnóstico primário de perturbação esquizofreniforme foram selecionadas com base no código de diagnóstico 295.4x da Classificação Internacional de Doenças versão 9, Modificação Clínica (CID-9-CM). Foram obtidos dados relativos à data de nascimento, ao sexo, à zona de residência, aos diagnósticos, à duração do internamento (length of stay), ao estado de alta e às despesas hospitalares. As comorbilidades foram analisadas com recurso à pontuação do índice de Charlson. Foram efetuados testes t para amostras independentes para avaliar diferenças em variáveis contínuas com distribuição normal e testes Mann-Whitney-U quando esta distribuição não foi registada.Resultados: Nos hospitais públicos de Portugal Continental, ocorreu um total de 594 internamentos com o diagnóstico primário de perturbação esquizofreniforme durante o período de oito anos selecionado. A maioria, 72,1% (n = 428), estava associada a doentes do sexo masculino. A idade média de admissão foi de 34,34 anos nos homens e de 40,19 anos nas mulheres. A mediana do length of stay foi de 17,00 dias e a mortalidade intra-hospitalar foi de 0,5% (n = 3). Apenas 6,1% (n = 36) dos episódios de internamento tinham uma ou mais comorbilidades registadas. Foram documentados 41 reinternamentos.Conclusão: As hospitalizações com o diagnóstico principal de perturbação esquizofreniforme ocorrem mais frequentemente em doentes jovens do sexo masculino. Tanto quanto é do conhecimento dos autores, este é o primeiro estudo de âmbito nacional que analisa todos os internamentos por este diagnóstico em Portugal.",
+        "keywords": "Hospitalização, Perturbações Psicóticas",
+        "authors": [
+            {
+                "name": "Inês Teixeira da Cunha",
+                "affiliation": "Faculty of Medicine. Universidade do Porto. Porto."
+            },
+            {
+                "name": "Celeste Silveira",
+                "affiliation": "Psychiatry Service. Unidade Local de Saúde São João. Porto."
+            },
+            {
+                "name": "Alberto Freitas",
+                "affiliation": "CINTESIS@RISE. Department of Community Medicine, Information and Health Decision Sciences (MEDCIDS). Faculty of Medicine. Universidade do Porto. Porto."
+            },
+            {
+                "name": "Manuel Gonçalves Pinho",
+                "affiliation": "CINTESIS@RISE. Department of Clinical Neurosciences and Mental Health. Faculty of Medicine. Universidade do Porto. Porto; Department of Psychiatry and Mental Health. Unidade Local de Saúde Tâmega e Sousa. Penafiel."
+            }
+        ],
+        "doi": "https://doi.org/10.20344/amp.21714",
+        "pdf": "https://www.actamedicaportuguesa.com/revista/index.php/amp/article/view/21714/15498",
+        "publish_date": "2024-09-06",
+        "title": "Hospitalizações por Perturbação Esquizofreniforme: Uma Análise Clínica e Demográfica de uma Base de Dados Nacional",
+        "url": "https://www.actamedicaportuguesa.com/revista/index.php/amp/article/view/21714"
+    },
+    {
+        "abstract": "Resumo Introdução: Estimar a prevalência da exposição ao fumo ambiental de tabaco (FAT) é uma prioridade de saúde pública, permitindo avaliar a carga de doença atribuível na população e o impacto da lei de proibição de fumar. Realizou-se uma revisão sistemática para analisar como tem sido avaliada a exposição ao FAT; e como tem sido estimada a sua prevalência na população portuguesa, desde a implementação da proibição parcial de fumar em 2008.Métodos: Foi feita uma pesquisa bibliográfica nas bases de dados Web of Science, MEDLINE e Embase até novembro de 2022, aplicando uma estratégia de pesquisa pré-concebida e seguindo as diretrizes PRISMA 2020. A pesquisa não foi restringida por período de estudo, desenho do estudo, tamanho da amostra ou idioma, e foi complementada por uma pesquisa manual da literatura. Foi utilizada a escala de Newcastle-Ottawa modificada para avaliar a qualidade dos estudos.Resultados: Foram incluídos 13 estudos transversais. A prevalência da exposição ao FAT nos três estudos europeus variou entre 8,2% (população adulta exposta em casa em 2010) e 93,3% (população adolescente/adulta exposta em esplanadas de bares/restaurantes em 2016). Três estudos nacionais estimaram a exposição das crianças em casa: variando entre 32,6% em 2010 - 2011 e 14,4% em 2016. De acordo com os estudos mais recentes, 49,8% das mulheres residentes no Porto foram expostas ao FAT durante o terceiro trimestre de gravidez em 2010 - 2011; 32,6% e 38,4% das crianças foram expostas ao FAT em casa, respetivamente em Lisboa e nos Açores.Conclusão: Uma percentagem significativa da população portuguesa, em particular as crianças e as mulheres grávidas, continua exposta ao fumo ambiental do tabaco. É necessária uma política abrangente de proibição de fumar, não só em locais públicos exteriores, mas também em locais interiores privados.",
+        "keywords": [
+            "Exposição Ambiental, Portugal, Política Anti-Tabaco, Poluição pelo Fumo do Tabaco/efeitos adversos, Tabagismo/epidemiologia"
+        ],
+        "authors": [
+            {
+                "name": "Nerea Mourino",
+                "affiliation": "Health Science Research Centre (CICS-UBI). Universidade da Beira Interior. Covilhã; Public Health Research Centre (CISP). National School of Public Health (ENSP). Universidade NOVA de Lisboa. Lisbon; Unidade de Cessação Tabágica. Serviço de Medicina Preventiva. Hospital Pêro da Covilhã. Unidade Local de Saúde Cova da Beira. Covilhã."
+            },
+            {
+                "name": "Cristina Candal-Pedreira",
+                "affiliation": "Department of Preventive Medicine and Public Health. Universidade de Santiago de Compostela. Santiago de Compostela."
+            }
+        ],
+        "doi": "https://doi.org/10.20344/amp.21802",
+        "pdf": "https://www.actamedicaportuguesa.com/revista/index.php/amp/article/view/21802/15514",
+        "publish_date": "2024-09-20",
+        "title": "Exposição ao Fumo Ambiental do Tabaco em Portugal Após a Implementação da Proibição de Fumar: Uma Revisão Sistemática",
+        "url": "https://www.actamedicaportuguesa.com/revista/index.php/amp/article/view/21802"
+    },
+    {
+        "abstract": "Resumo Durante mais de duas décadas de atividade, a Agência Europeia de Medicamentos estabeleceu-se em rede com as agências nacionais do medicamento, congregando - nos seus vários comités científicos e grupos de trabalho - peritos europeus provenientes das mais variadas vertentes da avaliação da qualidade, segurança e eficácia de medicamentos. O trabalho que se realiza no âmbito das atividades da Agência Europeia de Medicamentos e as conclusões a que se chegam a nível Europeu afetam milhões de cidadãos. A Agência Europeia de Medicamentos considera ser de grande importância manter, de forma sustentável e consistente, a participação ativa de médicos de Medicina Geral e Familiar, assim como de outras especialidades médicas, no processo de avaliação e monitorização de medicamentos. O presente artigo aborda de forma resumida como se promove a participação de médicos e profissionais de saúde, em geral, nas atividades da Agência Europeia de Medicamentos.",
+        "keywords": "Aprovação de Medicamentos, Órgãos Governamentais, Pessoal de Saúde, União Europeia",
+        "authors": [
+            {
+                "name": "Ivana Silva",
+                "affiliation": "European Medicines Agency. Londres. Reino Unido."
+            }
+        ],
+        "doi": "https://doi.org/10.20344/amp.9871",
+        "pdf": "https://www.actamedicaportuguesa.com/revista/index.php/amp/article/view/9871/5230",
+        "publish_date": "2017-11-29",
+        "title": "A Participação de Médicos nas Atividades da Agência Europeia de Medicamentos",
+        "url": "https://www.actamedicaportuguesa.com/revista/index.php/amp/article/view/9871"
+    }
+]
