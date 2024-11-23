@@ -47,4 +47,13 @@ def Criar_Publicação(fnome):
     f = open(fnome, 'w', encoding="utf-8")
     json.dump(bd, f, ensure_ascii=False, indent=4)
 
+# OPERAÇÃO Carregar Base de Dados Para a Memória
 
+import json
+def Carregar_BD(fnome):
+
+    f = open(fnome, 'r', encoding='utf-8')
+    publicações = json.load(f)
+    return publicações
+
+mybd = Carregar_BD('ata_medica_papers.json')
