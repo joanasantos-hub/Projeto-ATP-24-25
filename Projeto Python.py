@@ -60,3 +60,23 @@ def Carregar_BD(fnome):
     return publicações
 
 mybd = Carregar_BD('ata_medica_papers.json')
+
+# OPERAÇÃO Distribuição TOP 20 Autores com Mais Publicações
+
+import json
+mybd = Carregar_BD('ata_medica_papers.json')
+
+def Distribuição_20A(bd):
+
+    res = {}
+    for publicação in bd:
+        for author in publicação['authors']:
+            nome_autor = author.get('name')
+            if nome_autor in res:
+                res[nome_autor] = res[nome_autor] + 1
+            else:
+                res[nome_autor] = 1
+    
+    top_20 = sorted(res.items(), key=lambda x: x[1], reverse=True)[:20]
+
+    return top_20
