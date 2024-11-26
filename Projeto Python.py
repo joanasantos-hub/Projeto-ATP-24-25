@@ -119,3 +119,48 @@ def Distribuição_Mês(bd):
                 else:
                     res[mês] = 1
     return dict(sorted(res.items()))
+
+# OPERAÇÃO Distribuição TOP 20 Palavras-Chave Mais Frequentes
+
+import json
+mybd =  Carregar_BD('ata_medica_papers.json')
+
+def Distribuição_20PC(bd):
+
+    res = {}
+    for publicações in bd:
+        palavras_chaves = publicações.get('keywords')
+        if palavras_chaves: # Garante que a string não está vazia
+            lista_palavras = palavras_chaves.split(',') # Criamos uma lista com as palavras-chave de cada publicação
+            for pc in lista_palavras:
+                pc = pc.strip()
+                if pc in res:
+                    res[pc] = res[pc] + 1
+                else:
+                    res[pc] = 1
+
+    top_20 = sorted(res.items(), key=lambda x: x[1], reverse=True)[:20]
+
+    return dict(top_20)
+
+# OPERAÇÃO Distribuição Publicações de x Autor Por Ano
+
+import json
+mybd = Carregar_BD('ata_medica_papers.json')
+
+def Distribuição_Autor(bd): # Não funciona para certos nomes ??? RESOLVER!!!!
+
+    nome = input('Introduza o nome do autor: ').strip().lower()
+    res = {}
+    for publicação in bd:
+        data_pub = publicação.get('publish_date')
+        if data_pub:
+            for author in publicação.get('authors'):
+                nome_autor = author.get('name').strip().lower()
+                if nome == nome_autor:
+                    ano = data_pub.split('-')[0]
+                    if ano in res:
+                        res[ano] = res[ano] + 1
+                    else:
+                        res[ano] = 1
+    return dict(sorted(res.items()))
