@@ -99,3 +99,23 @@ def Distribuição_Ano(bd):
                 res[ano] = 1
     return sorted(res.items())
     
+# OPERAÇÃO Distribuição Publicações Por Mês em x Ano
+
+import json
+mybd = Carregar_BD('ata_medica_papers.json')
+
+def Distribuição_Mês(bd):
+
+    x = input('Introduza o ano que pretende analisar: ') # x é o input do ano que queremos analisar
+    res = {}
+    for publicação in bd:
+        data_pub = publicação.get('publish_date')
+        if data_pub: # Garante que a string não está vazia
+            ano = data_pub.split('-')[0]
+            mês = data_pub.split('-')[1]
+            if x == ano:
+                if mês in res:
+                    res[mês] = res[mês] + 1
+                else:
+                    res[mês] = 1
+    return sorted(res.items())
