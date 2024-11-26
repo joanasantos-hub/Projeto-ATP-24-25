@@ -80,3 +80,22 @@ def Distribuição_20A(bd):
     top_20 = sorted(res.items(), key=lambda x: x[1], reverse=True)[:20]
 
     return top_20
+
+# OPERAÇÃO Distribuição de Publicações Por Ano
+
+import json
+mybd =  Carregar_BD('ata_medica_papers.json')
+
+def Distribuição_Ano(bd):
+
+    res = {}
+    for publicação in bd:
+        data_pub = publicação.get('publish_date')
+        if data_pub: # Garante que a string não está vazia
+            ano = data_pub.split('-')[0]
+            if ano in res:
+                res[ano] = res[ano] + 1
+            else:
+                res[ano] = 1
+    return sorted(res.items())
+    
