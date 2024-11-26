@@ -43,7 +43,7 @@ def Criar_Publicação(fnome):
 
     }
 
-    if nova_pub != '':
+    if nova_pub.get('title') != '':
         bd.append(nova_pub)
         f = open(fnome, 'w', encoding="utf-8")
         json.dump(bd, f, ensure_ascii=False, indent=4)
