@@ -79,7 +79,7 @@ def Distribuição_20A(bd):
     
     top_20 = sorted(res.items(), key=lambda x: x[1], reverse=True)[:20]
 
-    return top_20
+    return dict(top_20)
 
 # OPERAÇÃO Distribuição de Publicações Por Ano
 
@@ -97,7 +97,7 @@ def Distribuição_Ano(bd):
                 res[ano] = res[ano] + 1
             else:
                 res[ano] = 1
-    return sorted(res.items())
+    return dict(sorted(res.items()))
     
 # OPERAÇÃO Distribuição Publicações Por Mês em x Ano
 
@@ -118,4 +118,4 @@ def Distribuição_Mês(bd):
                     res[mês] = res[mês] + 1
                 else:
                     res[mês] = 1
-    return sorted(res.items())
+    return dict(sorted(res.items()))
