@@ -133,7 +133,7 @@ def Distribuição_20PC(bd):
         if palavras_chaves: # Garante que a string não está vazia
             lista_palavras = palavras_chaves.split(',') # Criamos uma lista com as palavras-chave de cada publicação
             for pc in lista_palavras:
-                pc = pc.strip()
+                pc = pc.strip(' .')
                 if pc in res:
                     res[pc] = res[pc] + 1
                 else:
