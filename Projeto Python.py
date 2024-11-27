@@ -164,3 +164,38 @@ def Distribuição_Autor(bd): # Não funciona para certos nomes ??? RESOLVER!!!!
                     else:
                         res[ano] = 1
     return dict(sorted(res.items()))
+
+# OPERAÇÃO Distribuição Palavra-Chave Mais Frequente Por Ano (TOP 1)
+
+import json
+mybd = Carregar_BD('teste_projeto.json')
+
+def Distribuição_PC(bd):
+
+    res = {}
+    for publicações in bd:
+        data_pub = publicações.get('publish_date')
+        palavras_chaves = publicações.get('keywords')
+        if data_pub and palavras_chaves: # Garante que as strings não estão vazias
+            ano = data_pub.split('-')[0]
+            lista_palavras = palavras_chaves.split(',')
+            if ano not in res:
+                res[ano] = {}
+            for pc in lista_palavras:
+                pc = pc.strip(' .')
+                if pc in res[ano]:
+                    res[ano][pc] = res[ano][pc] + 1
+                else:
+                    res[ano][pc] = 1
+
+    # res é finalizado como um dicionário em que as chaves são os anos e os valores serão dicionários com a contagem das palavras-chave
+
+    pc_mais_frequente = {}
+    for ano, pc in res.items():
+        top_1 = sorted(pc.items(), key=lambda x: x[1], reverse=True)[:1]
+        if top_1:  # Garante que existe pelo menos uma palavra-chave no TOP 1
+            pc_mais_frequente[ano] = top_1[0]
+
+    # O método pc.items() vai transformar os dicionários com a contagem de palavras-chave numa lista de tuplos que será sorted de modo a retornar apenas a palavra-chave mais frequente para cada ano   
+
+    return pc_mais_frequente
