@@ -148,7 +148,7 @@ def Distribuição_20PC(bd):
 import json
 mybd = Carregar_BD('ata_medica_papers.json')
 
-def Distribuição_Autor(bd): # Não funciona para certos nomes ??? RESOLVER!!!!
+def Distribuição_Autor(bd):
 
     nome = input('Introduza o nome do autor: ').strip().lower()
     res = {}
