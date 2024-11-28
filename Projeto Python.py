@@ -31,6 +31,12 @@ def Criar_Publicação(fnome):
                 "affiliation": affiliation,
                 "orcid": orcid
             })
+            
+    for author in authors:
+        if author.get('affiliation') == '':
+            del author['affiliation']
+        if author.get('orcid') == '':
+            del author['orcid']
     
     nova_pub = {
     
@@ -45,7 +51,9 @@ def Criar_Publicação(fnome):
 
     }
 
-    if nova_pub.get('title') != '':
+    nova_pub = {chave: valor for chave,valor in nova_pub.items() if valor} # Garante que se uma chave não possuir informação não será criada essa entrada no dicionário da nova publicação
+
+    if nova_pub.get('title'): # Garante que existe um título para a publicação (requisito obrigatório)
         bd.append(nova_pub)
         f = open(fnome, 'w', encoding="utf-8")
         json.dump(bd, f, ensure_ascii=False, indent=4)
