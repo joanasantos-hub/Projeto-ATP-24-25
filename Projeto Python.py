@@ -168,7 +168,7 @@ def Distribuição_Autor(bd):
 # OPERAÇÃO Distribuição Palavra-Chave Mais Frequente Por Ano (TOP 1)
 
 import json
-mybd = Carregar_BD('teste_projeto.json')
+mybd = Carregar_BD('ata_medica_papers.json')
 
 def Distribuição_PC(bd):
 
