@@ -25,9 +25,11 @@ def Criar_Publicação(fnome):
             mais_autores = False
         else:
             affiliation = input(f"Introduza a afiliação de {name}: ").strip()
+            orcid =  input(f"Introduza o orcid de {name}").strip()
             authors.append({
                 "name": name, 
-                "affiliation": affiliation
+                "affiliation": affiliation,
+                "orcid": orcid
             })
     
     nova_pub = {
