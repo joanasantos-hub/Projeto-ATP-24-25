@@ -71,6 +71,32 @@ def Carregar_BD(fnome):
 
 mybd = Carregar_BD('ata_medica_papers.json')
 
+# Consultar pub por título e listar informação organizada
+
+def Consultar_Publicacao(mybd):
+    busca = input("Digite o título da publicação: ").strip()
+    for pub in mybd:
+        if pub.get('title') and pub['title'].lower() == busca.lower():
+            print("\n=== Detalhes da Publicação ===")
+            print(f"Título: {pub['title']}")
+            print(f"Resumo: {pub['abstract']}")
+            print(f"Palavras-chave: {pub['keywords']}")
+            print(f"DOI: {pub['doi']}")
+            print(f"PDF: {pub['pdf']}")
+            print(f"Data de Publicação: {pub['publish_date']}")
+            print(f"URL: {pub['url']}")
+            print("\n--- Autores ---")
+            for autor in pub['authors']:
+                print(f"Nome: {autor.get('name', 'Nome não disponível')}, "
+                          f"Afiliação: {autor.get('affiliation', 'Afiliação não disponível')}, "
+                          f"ORCID: {autor.get('orcid', 'ORCID não disponível')}")
+            return
+    return (f"Nenhuma publicação encontrada com o título: '{busca}'")
+
+
+mybd = Carregar_BD('ata_medica_papers.JSON')
+Consultar_Publicacao(mybd)
+
 # OPERAÇÃO Distribuição TOP 20 Autores com Mais Publicações
 
 import json
