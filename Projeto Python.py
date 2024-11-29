@@ -101,7 +101,7 @@ def Distribuição_Ano(bd):
     res = {}
     for publicação in bd:
         data_pub = publicação.get('publish_date')
-        if data_pub: # Garante que a string não está vazia
+        if data_pub: # Garante que existe essa entrada no dicionário
             ano = data_pub.split('-')[0]
             if ano in res:
                 res[ano] = res[ano] + 1
@@ -120,7 +120,7 @@ def Distribuição_Mês(bd):
     res = {}
     for publicação in bd:
         data_pub = publicação.get('publish_date')
-        if data_pub: # Garante que a string não está vazia
+        if data_pub: # Garante que existe essa entrada no dicionário
             ano = data_pub.split('-')[0]
             mês = data_pub.split('-')[1]
             if x == ano:
@@ -140,7 +140,7 @@ def Distribuição_20PC(bd):
     res = {}
     for publicações in bd:
         palavras_chaves = publicações.get('keywords')
-        if palavras_chaves: # Garante que a string não está vazia
+        if palavras_chaves: # Garante que existe essa entrada no dicionário
             lista_palavras = palavras_chaves.split(',') # Criamos uma lista com as palavras-chave de cada publicação
             for pc in lista_palavras:
                 pc = pc.strip(' .')
@@ -164,7 +164,7 @@ def Distribuição_Autor(bd):
     res = {}
     for publicação in bd:
         data_pub = publicação.get('publish_date')
-        if data_pub:
+        if data_pub: # Garante que existe essa entrada no dicionário
             for author in publicação.get('authors'):
                 nome_autor = author.get('name').strip().lower()
                 if nome == nome_autor:
@@ -186,7 +186,7 @@ def Distribuição_PC(bd):
     for publicações in bd:
         data_pub = publicações.get('publish_date')
         palavras_chaves = publicações.get('keywords')
-        if data_pub and palavras_chaves: # Garante que as strings não estão vazias
+        if data_pub and palavras_chaves: # Garante que existem essas entradas no dicionário
             ano = data_pub.split('-')[0]
             lista_palavras = palavras_chaves.split(',')
             if ano not in res:
