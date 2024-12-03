@@ -235,3 +235,14 @@ def Distribuição_PC(bd):
     # O método pc.items() vai transformar os dicionários com a contagem de palavras-chave numa lista de tuplos que será sorted de modo a retornar apenas a palavra-chave mais frequente para cada ano   
 
     return pc_mais_frequente
+
+# OPERAÇÃO Listar Autores no Ficheiro de Suporte
+
+import json
+mybd = Carregar_BD('ata_medica_papers.json')
+
+def Listar_Autores(bd):
+    print('---- Lista de Autores ----')
+    for publicações in bd:
+        for author in publicações.get('authors'):
+            print(f'Autor: {author.get('name')} ::: Publicação: {publicações.get('title')}')
