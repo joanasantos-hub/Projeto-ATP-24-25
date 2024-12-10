@@ -65,37 +65,47 @@ def Criar_Publicação(fnome):
 import json
 def Carregar_BD(fnome):
 
-    f = open(fnome, 'r', encoding='utf-8')
-    publicações = json.load(f)
+    with open(fnome, 'r', encoding='utf-8') as f:
+        publicações = json.load(f)
     return publicações
 
 mybd = Carregar_BD('ata_medica_papers.json')
 
-# Consultar pub por título e listar informação organizada
+# OPERAÇÃO Consultar Publicação por Título
 
-def Consultar_Publicacao(mybd):
-    busca = input("Digite o título da publicação: ").strip()
-    for pub in mybd:
-        if pub.get('title') and pub['title'].lower() == busca.lower():
-            print("\n=== Detalhes da Publicação ===")
-            print(f"Título: {pub['title']}")
-            print(f"Resumo: {pub['abstract']}")
-            print(f"Palavras-chave: {pub['keywords']}")
-            print(f"DOI: {pub['doi']}")
-            print(f"PDF: {pub['pdf']}")
-            print(f"Data de Publicação: {pub['publish_date']}")
-            print(f"URL: {pub['url']}")
+import json
+mybd = Carregar_BD('ata_medica_papers.json')
+
+def Consultar_Title(bd):
+    
+    busca_title = input("Introduza o título da publicação que deseja consultar: ").strip()
+
+    for publicação in bd:
+        if publicação.get('title') and publicação['title'].lower() == busca_title.lower():
+            print("=== Detalhes da Publicação ===\n")
+            print(f"Título: {publicação['title']}")
+            if publicação.get('abstract'):
+                print(f"Resumo: {publicação['abstract']}")
+            if publicação.get('keywords'):
+                print(f"Palavras-chave: {publicação['keywords']}")
+            if publicação.get('doi'):
+                print(f"DOI: {publicação['doi']}")
+            if publicação.get('pdf'):
+                print(f"PDF: {publicação['pdf']}")
+            if publicação.get('publish_date'):
+                print(f"Data de Publicação: {publicação['publish_date']}")
+            if publicação.get('url'):
+                print(f"URL: {publicação['url']}")
             print("\n--- Autores ---")
-            for autor in pub['authors']:
+
+            for autor in publicação['authors']:
                 print(f"Nome: {autor.get('name', 'Nome não disponível')}, "
                           f"Afiliação: {autor.get('affiliation', 'Afiliação não disponível')}, "
                           f"ORCID: {autor.get('orcid', 'ORCID não disponível')}")
             return
-    return (f"Nenhuma publicação encontrada com o título: '{busca}'")
+    return (f'Nenhuma publicação encontrada com o título: {busca_title}')
 
-
-mybd = Carregar_BD('ata_medica_papers.JSON')
-Consultar_Publicacao(mybd)
+Consultar_Title(mybd)
 
 # OPERAÇÃO Distribuição TOP 20 Autores com Mais Publicações
 
