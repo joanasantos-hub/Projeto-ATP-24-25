@@ -242,7 +242,21 @@ import json
 mybd = Carregar_BD('ata_medica_papers.json')
 
 def Listar_Autores(bd):
-    print('---- Lista de Autores ----')
+    print('---- Lista de Autores ----\n')
     for publicações in bd:
         for author in publicações.get('authors'):
-            print(f'Autor: {author.get('name')} ::: Publicação: {publicações.get('title')}')
+            print(f'Autor: {author.get('name')}\nPublicação: {publicações.get('title')}\n')
+
+# OPERAÇÃO Listar Publicações com x Palavras-Chave do Ficheiro de Suporte
+
+import json
+mybd = Carregar_BD('ata_medica_papers.json')
+
+def Listar_Pub_PC(bd):
+
+    palavra_chave = input('Introduza a palavra-chave que deseja procurar: ')
+    print('---- Lista de Publicações ----\n')
+    for publicação in bd:
+        if publicação.get('keywords'):
+            if palavra_chave in publicação.get('keywords'):
+                print(f'Publicação: {publicação.get('title')}\nPalavras-Chave: {publicação.get('keywords')}\n')
