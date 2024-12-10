@@ -107,6 +107,65 @@ def Consultar_Title(bd):
 
 Consultar_Title(mybd)
 
+def Consultar_PDF(bd):
+    
+    busca_PDF = input("Introduza o PDF da publicação que deseja consultar: ").strip()
+
+    for publicação in bd:
+        if publicação.get('pdf') and publicação['pdf'].lower() == busca_PDF.lower():
+            print("=== Detalhes da Publicação ===\n")
+            print(f"Título: {publicação['title']}")
+            if publicação.get('abstract'):
+                print(f"Resumo: {publicação['abstract']}")
+            if publicação.get('keywords'):
+                print(f"Palavras-chave: {publicação['keywords']}")
+            if publicação.get('doi'):
+                print(f"DOI: {publicação['doi']}")
+            if publicação.get('publish_date'):
+                print(f"Data de Publicação: {publicação['publish_date']}")
+            if publicação.get('url'):
+                print(f"URL: {publicação['url']}")
+            print("\n--- Autores ---")
+
+            for autor in publicação['authors']:
+                print(f"Nome: {autor.get('name', 'Nome não disponível')} ::: "
+                          f"Afiliação: {autor.get('affiliation', 'Afiliação não disponível')} ::: "
+                          f"ORCID: {autor.get('orcid', 'ORCID não disponível')}")
+            return
+    return (f'Nenhuma publicação encontrada com o DOI: {busca_PDF}')
+    
+Consultar_PDF(mybd)
+
+def Consultar_URL(bd):
+    
+    busca_URL = input("Introduza o PDF da publicação que deseja consultar: ").strip()
+
+    for publicação in bd:
+        if publicação.get('url') and publicação['url'].lower() == busca_URL.lower():
+            print("=== Detalhes da Publicação ===\n")
+            print(f"Título: {publicação['title']}")
+            if publicação.get('abstract'):
+                print(f"Resumo: {publicação['abstract']}")
+            if publicação.get('keywords'):
+                print(f"Palavras-chave: {publicação['keywords']}")
+            if publicação.get('doi'):
+                print(f"DOI: {publicação['doi']}")
+            if publicação.get('pdf'):
+                print(f"PDF: {publicação['pdf']}")
+            if publicação.get('publish_date'):
+                print(f"Data de Publicação: {publicação['publish_date']}")
+            print("\n--- Autores ---")
+
+            for autor in publicação['authors']:
+                print(f"Nome: {autor.get('name', 'Nome não disponível')} ::: "
+                          f"Afiliação: {autor.get('affiliation', 'Afiliação não disponível')} ::: "
+                          f"ORCID: {autor.get('orcid', 'ORCID não disponível')}")
+            return
+    return (f'Nenhuma publicação encontrada com o DOI: {busca_URL}')
+
+
+Consultar_URL(mybd)
+
 def Consultar_DOI(bd):
     
     busca_DOI = input("Introduza o DOI da publicação que deseja consultar: ").strip()
