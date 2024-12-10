@@ -260,3 +260,22 @@ def Listar_Pub_PC(bd):
         if publicação.get('keywords'):
             if palavra_chave in publicação.get('keywords'):
                 print(f'Publicação: {publicação.get('title')}\nPalavras-Chave: {publicação.get('keywords')}\n')
+
+# OPERAÇÃO Importar Publicações de Ficheiro Externo JSON
+
+import json
+
+def Importar_Pub(fnome):
+
+    with open(fnome, 'r', encoding='utf-8') as f: # Lemos o ficheiro externo
+        novos_registos = json.load(f)
+
+    with open('ata_medica_papers.json', 'r', encoding='utf-8') as f2: # Lemos o ficheiro principal com a nossa bd
+        bd = json.load(f2)
+
+    for registos in novos_registos:
+            if registos.get('title'): # Os registos válidos no ficheiro externo serão adicionados à bd
+                bd.append(registos)
+
+    with open('ata_medica_papers.json', 'w', encoding='utf-8') as f2: #Abrimos o ficheiro principal para escrita e implementamos a nova bd atualizada com os novos registos
+        json.dump(bd, f2, ensure_ascii=False, indent=4)
