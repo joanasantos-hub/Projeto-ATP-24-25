@@ -5,8 +5,8 @@
 import json
 def Criar_Publicação(fnome):
 
-    f = open(fnome, 'r', encoding="utf-8") # f é uma lista de dicionários (um dicionário para cada publicação)
-    bd = json.load(f)
+    with open(fnome, 'r', encoding='utf-8') as f: # f é uma lista de dicionários (um dicionário para cada publicação)
+        bd = json.load(f)
 
     abstract = input("Introduza o resumo da publicação: ").strip()
     keywords = input("Introduza palavras-chave da publicação (separadas por vírgula): ").strip()
@@ -55,8 +55,8 @@ def Criar_Publicação(fnome):
 
     if nova_pub.get('title'): # Garante que existe um título para a publicação (requisito obrigatório)
         bd.append(nova_pub)
-        f = open(fnome, 'w', encoding="utf-8")
-        json.dump(bd, f, ensure_ascii=False, indent=4)
+        with open(fnome, 'w', encoding='utf-8') as f:
+            json.dump(bd, f, ensure_ascii=False, indent=4)
     else:
         return 
 
