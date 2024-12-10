@@ -99,8 +99,8 @@ def Consultar_Title(bd):
             print("\n--- Autores ---")
 
             for autor in publicação['authors']:
-                print(f"Nome: {autor.get('name', 'Nome não disponível')}, "
-                          f"Afiliação: {autor.get('affiliation', 'Afiliação não disponível')}, "
+                print(f"Nome: {autor.get('name', 'Nome não disponível')} ::: "
+                          f"Afiliação: {autor.get('affiliation', 'Afiliação não disponível')} ::: "
                           f"ORCID: {autor.get('orcid', 'ORCID não disponível')}")
             return
     return (f'Nenhuma publicação encontrada com o título: {busca_title}')
