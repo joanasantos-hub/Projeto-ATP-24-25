@@ -377,3 +377,41 @@ def Importar_Pub(fnome):
 
     with open('ata_medica_papers.json', 'w', encoding='utf-8') as f2: #Abrimos o ficheiro principal para escrita e implementamos a nova bd atualizada com os novos registos
         json.dump(bd, f2, ensure_ascii=False, indent=4)
+
+def apagar_pub(fnome):
+    try:
+        with open(fnome, 'r', encoding='utf-8') as f:
+            publicacoes = json.load(f)  # Carregar daos do ficheiro
+
+        title = input("Insira o título: ")
+        # Filtração de publicações
+        remover_pubs = [pub for pub in publicacoes if pub['title'] == title]
+        publicacoes = [pub for pub in publicacoes if pub['title'] != title]
+
+        if remover_pubs:
+            # Vai formatar a lista de pubs apagadas num ficheiro json
+            try:
+                with open('pubs_removida.json', 'r', encoding='utf-8') as f:
+                    pub_removidas = json.load(f)
+            except FileNotFoundError:
+                pub_removidas = []  # Se o ficheiro nao existir vai inicializar o ficheiro adicionado uma lista vazia
+
+            pub_removidas.extend(remover_pubs) # vai adicionar cada pub apagado do ficheiro principal e adiciona para a ultima posição da lista
+
+            with open('pubs_removida.json', 'w', encoding='utf-8') as f:
+                json.dump(pub_removidas, f, ensure_ascii=False, indent=4)
+
+        # Vai atualizar o ficheiro sem as publicações com titulo que o utilizador inseriu
+        with open(fnome, 'w', encoding='utf-8') as f:
+            json.dump(publicacoes, f, ensure_ascii=False, indent=4)
+
+        print("Publicações removidas:", remover_pubs)
+        return remover_pubs
+
+    except FileNotFoundError: # se o ficheiro não existir
+        print(f"Erro: O ficheiro {fnome} não foi encontrado.")
+    except json.JSONDecodeError: # se houver alguma formatação incorreta 
+        print("Erro: O ficheiro contém dados inválidos.")
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+
