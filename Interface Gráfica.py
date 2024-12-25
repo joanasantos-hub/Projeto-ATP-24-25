@@ -29,6 +29,7 @@ def criar_layout(publicacoes):
         [sg.Button("Atualizar Publicação", key="-ATUALIZAR-")],
         [sg.Button("Eliminar Publicação", key="-ELIMINAR-")],
         [sg.Button("Ver Publicações Eliminadas", key="-ELIMINADAS-")],
+        [sg.Button("Gerar Relatório", key= "-RELATORIO-")],
         [sg.Button("Gerar Gráfico", key="-GRAFICO-")],
         [sg.Button("Listar Autores", key="-LISTARAUTORES-")],
         [sg.Button("Importar Publicações", key="-IMPORTAR-")],
