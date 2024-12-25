@@ -51,3 +51,31 @@ def criar_layout(publicacoes):
         ],
     ]
     return layout
+    
+# Criação de uma nova publicação
+
+def criacao(): 
+    global publicacoes
+
+# Carregar publicações existentes
+
+    publicacoes = logic.Carregar_BD()
+
+    layout_publicacoes = [
+        [sg.Text("Introduza o resumo da publicação:")],
+        [sg.InputText(key='-ABSTRACT-')],
+        [sg.Text("Introduza palavras-chave da publicação (separadas por vírgula):")],
+        [sg.InputText(key='-KEYWORDS-')],
+        [sg.Text("Introduza a data da publicação (A-M-D):")],
+        [sg.InputText(key='-DATA-', readonly=True), sg.CalendarButton('Escolher Data', target='-DATA-', format='%d/%m/%Y')],
+        [sg.Text("Introduza o doi da publicação:")],
+        [sg.InputText(key='-DOI-')],
+        [sg.Text("Introduza o pdf da publicação:")],
+        [sg.InputText(key='-PDF-')],
+        [sg.Text("Introduza o título da publicação:")],
+        [sg.InputText(key='-TITLE-')],
+        [sg.Text("Introduza o url da publicação:")]
+        [sg.Button('Criar Publicação'), sg.Button('Cancelar')]
+
+    ]
+
