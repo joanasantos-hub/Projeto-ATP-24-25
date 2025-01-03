@@ -9,7 +9,7 @@ mybd = Carregar_BD('ata_medica_papers.json')
 
 
 # Distribuição TOP 20 AUTORES
-dist_20A = Distribuição_20A(mybd)
+#dist_20A = Distribuição_20A(mybd)
 
 def graf_20A(dist):
     plt.figure(figsize=(10, 6))
@@ -22,7 +22,7 @@ def graf_20A(dist):
     plt.show()
 
 # Distribuição TOP 20 PALAVRAS-CHAVE
-dist_20PC = Distribuição_20PC(mybd)
+#dist_20PC = Distribuição_20PC(mybd)
 
 def graf_20PC(dist):
     plt.figure(figsize=(10, 6))
@@ -35,7 +35,7 @@ def graf_20PC(dist):
     plt.show()
 
 # Distribuição TOP 1 PALAVRAS-CHAVE POR ANO
-dist_PC = Distribuição_PC(mybd)
+#dist_PC = Distribuição_PC(mybd)
 
 def graf_PC(dist):
 
@@ -58,7 +58,7 @@ def graf_PC(dist):
     plt.show()
 
 # Distribuição PUBLICAÇÕES POR ANO
-dist_Ano = Distribuição_Ano(mybd)
+#dist_Ano = Distribuição_Ano(mybd)
 
 def graf_Ano(dist):
     plt.figure(figsize=(10, 6))
@@ -71,7 +71,7 @@ def graf_Ano(dist):
     plt.show()
 
 # Distribuição PUBLICAÇÕES POR MÊS NUM ANO
-dist_Mês = Distribuição_Mês(mybd)
+#dist_Mês = Distribuição_Mês(mybd)
 
 def graf_Mês(dist):
     plt.figure(figsize=(10, 6))
@@ -84,7 +84,7 @@ def graf_Mês(dist):
     plt.show()
 
 # Distribuição PUBLICAÇÕES DE UM AUTOR POR ANO -> ATENÇÃO alguns números não irão bater certo devido à presença de publicações sem data
-dist_Autor = Distribuição_Autor(mybd)
+#dist_Autor = Distribuição_Autor(mybd)
 
 def graf_Autor(dist):
     plt.figure(figsize=(10, 6))
