@@ -1,9 +1,5 @@
 import PySimpleGUI as sg
 import json
-from datetime import datetime
-from collections import Counter
-from collections import defaultdict
-from multiprocessing import Process
 import interface_linhacmd as logic
 import gráficos_distribuições as gd
 
@@ -12,9 +8,6 @@ sg.theme('LightPurple')
 publicações = logic.mybd  # Lista das publicações na base de dados
 
 # ------------- INTERFACE GRÁFICA -------------
-
-def hoje():
-    return datetime.today().date()
 
 def criar_layout(publicações): 
 
